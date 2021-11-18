@@ -1,0 +1,61 @@
+1. Lowest Common Ancestor - https://www.youtube.com/watch?v=_-QHfMDde90
+    - while recursion when node found return the node
+    - when node getting non null from both left and right child, return that node to its parent (found LCS)
+2. Print all the Nodes at a distance of K in Binary Tree - https://www.youtube.com/watch?v=i9ORlEy6EsI
+    - Important step : create link to parent node from child (keep it in hashmap child -> parent)
+    - Use BFS traversal to find nodes at K distance from given node:
+        - Push given node to queue
+        - keep distance = 0
+        - poll node from queue and
+            - add poll node in VISITED Set
+            - Increment distance
+            - add children of poll node
+            - once all childrent i.e. current size of queue is completed increment distance
+        - when distance == k, we found all nodes remaining in queue
+3. Total Nodes in complete binary tree (leftmost side is always complete)
+    - get only left height and right height
+    - if both are equal then total nodes formula = 2^height-1
+    - else do same for leftSubTree and rightSubTree + 1
+4. Diameter of binary tree:
+    - at each node we need height of left subtree and right subtree+1 is the diameter at that node
+    - keep max of diameters found at each node
+5. Max path sum of binary tree:
+    - at each node we need sum = node.value+sumLeftTree+sumRightTree
+    - make sure sum coming form subtree is not negative else take 0 as there is no point in adding negative
+    - keep global max to maintain max at each node
+    - return node.value + max(sumLeftTree, sumRightTree) to parent as we can consider path either from left or from right
+6. Max width of binary tree (distance between leftmost and rightmost): https://www.youtube.com/watch?v=ZbybYvcVLks
+    - assign index at each child node: for left = 2*i+1, for right: 2*i+2
+    - width = rightmost-leftmost+1
+    - to avoid overflow of index always decrement parent index value by 1
+    - use BFS traversal to traverse by level by adding Pair(node, index) at each point
+7. Min time taken to burn binary tree: https://www.youtube.com/watch?v=2r5wLmQfD6g&t=779s
+    - This is same as (Print all the Nodes at a distance of K in Binary Tree)
+8. Serialize and De-serialize Binary Tree- https://www.youtube.com/watch?v=-YbXySKJsX8
+    - Use level order traversal
+    - while de-serialise again use BFS while going through each value from created string
+9. Bottom view of binary tree - https://www.youtube.com/watch?v=0FtVY6I4pB8
+                            1
+                         2     3
+                      4     5     6
+                         8     9
+
+
+    In above tree: 4, 8, 5, 9, 6 are bottom view
+    Logic
+    - Think of imaginary line going from 1 to 5 call it line no.0
+    - line no.1 - through 3 to 9
+    - line no, -1 through 2 to 8
+    - at each line last number is the one which we want to consider
+
+    Steps:
+    - Do BFS with pair (lineNo, node)
+    - lineNo increments by 1 on right and decrements by 1 on left
+    - Keep Map of line -> node, whenever new node found for that line overwrite the value
+10. Delete node in BST - https://www.youtube.com/watch?v=kouxiP_H5WE
+    - Case 1: Once found node, if any left or right is null
+    - Case 2: If left and right not null
+        - point parent node pointer directly to left
+        - find rightMost node of left
+        - attach right child of search node there
+

@@ -42,7 +42,7 @@ class TaskEvenOdd implements Runnable {
 
 class Printer {
 
-    boolean isOdd = false;
+    private volatile boolean isOdd = false;
 
     synchronized void printEven(int number) {
 

@@ -33,7 +33,7 @@ public class KnapsackBinary {
 
     public int knapsackDP(int capacity, int[] weights, int[] profits, int totalCount) {
 
-        // there only two variables here knapsackDP(capacity, totalCount) will create cache with that only
+        // there only two variables here knapsackDP(totalCount, capacity) will create cache with that only
         // to reduce recursive calls
         int cache[][] = new int[totalCount+1][capacity+1];
 

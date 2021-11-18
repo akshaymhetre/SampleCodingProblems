@@ -6,7 +6,6 @@ import java.util.Queue;
 public class ProducerConsumerProblem {
     public static void main(String[] args) throws InterruptedException {
         Buffer<Integer> buffer = new Buffer<>(5);
-
         Thread producer = new Thread(() -> {
             try {
                 int value = 0;
