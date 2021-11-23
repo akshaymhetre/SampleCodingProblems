@@ -65,18 +65,26 @@ public class SkylineProblem {
             int currX = pair.x;
             //starting point
             if(currHeight < 0){
+                // only add positive heights
                 maxHeights.add(-currHeight);
             } else {
                 maxHeights.remove(currHeight);
             }
-            if(heightSoFar != maxHeights.peek()){
-                heightSoFar = maxHeights.peek();
+
+            final boolean isHeightChange = heightSoFar != getPeekFromQueue(maxHeights);
+            if(isHeightChange){
+                heightSoFar = getPeekFromQueue(maxHeights);
                 ans.add(Arrays.asList(currX, heightSoFar));
             }
         }
         return ans;
 
     }
+
+    private int getPeekFromQueue(PriorityQueue<Integer> maxHeights) {
+        return maxHeights.peek() == null ? 0 : maxHeights.peek();
+    }
+
     class Pair implements Comparable<Pair>{
         int x;
         int height;

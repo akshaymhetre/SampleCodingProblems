@@ -20,7 +20,7 @@ Output:1
 *
 * Logic: As we are considering multiple meeting rooms here
 * - Sort intervals by start time
-* - Create min heap using PriorityQueue with end time (holding meeting room that finishes first)
+* - Create MIN heap using PriorityQueue with end time (holding meeting room that finishes first)
 * - For every interval, compare start time with end time of minimum element from heap (consider that time to finish meeting room)
 * - Basically, heap is holding all meeting rooms in finishing order
 * */

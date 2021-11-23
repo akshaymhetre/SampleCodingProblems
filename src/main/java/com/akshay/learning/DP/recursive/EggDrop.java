@@ -18,7 +18,8 @@ public class EggDrop {
         for (int currFloor = 1; currFloor <= totalFloors; currFloor++) {
             int worstCaseChancesTakenForCurrFloor =
                     Math.max(
-                            // egg breaks on currFloor, then reduce egg count and check for floors below currFloor
+                            // as we will be using one egg here so reduce egg count
+                            // egg breaks on currFloor, check for floors below currFloor
                             eggDrop(totalEggs-1, currFloor-1),
                             // if egg doesnt break on currFloor, then check for remaining floors
                             eggDrop(totalEggs-1, totalFloors-currFloor)

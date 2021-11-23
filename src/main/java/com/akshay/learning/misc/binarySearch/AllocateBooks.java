@@ -83,6 +83,7 @@ public class AllocateBooks {
             if(pagesAllocated+a[i] > totalPages){
                 studentAllocated++;
                 pagesAllocated = a[i]; //reset to new element for next student
+                // not possible
                 if(pagesAllocated > totalPages) return false;
             } else {
                 pagesAllocated += a[i];

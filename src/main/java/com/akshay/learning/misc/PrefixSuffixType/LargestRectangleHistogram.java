@@ -36,7 +36,8 @@ public class LargestRectangleHistogram {
         Stack<Integer> st = new Stack<>();
         int maxA = 0;
         for(int cut = 0;cut<=n;cut++) {
-            while(!st.isEmpty() && (cut==n || heights[st.peek()] >= heights[cut])) {
+            // found lesser element than stack top or last element
+            while(!st.isEmpty() && (cut==n || heights[cut] <= heights[st.peek()] )) {
                 int height = heights[st.pop()];
                 int width;
                 if(st.isEmpty()) width = cut;

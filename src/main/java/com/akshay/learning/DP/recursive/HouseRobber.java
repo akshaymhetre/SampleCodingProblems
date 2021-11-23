@@ -29,7 +29,7 @@ public class HouseRobber {
 
     private int _rob(int[] nums, int n) {
         if(n < 0){
-            return nums[0];
+            return 0;
         }
         return Math.max(_rob(nums, n-1), _rob(nums, n-2) +nums[n]);
     }

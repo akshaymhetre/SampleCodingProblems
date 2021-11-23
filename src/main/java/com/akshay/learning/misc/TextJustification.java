@@ -1,4 +1,4 @@
-package com.akshay.learning.misc.binarySearch;
+package com.akshay.learning.misc;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -7,6 +7,7 @@ public class SortStack {
         Stack<T> stackOther = new Stack<>();
         while(!stack.isEmpty()){
             T pop = stack.pop();
+            // pop < stackOther.top()
             while(!stackOther.isEmpty() && pop.compareTo(stackOther.peek()) < 0){
                 T pop1 = stackOther.pop();
                 stack.push(pop1);

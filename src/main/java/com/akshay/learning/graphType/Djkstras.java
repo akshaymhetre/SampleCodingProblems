@@ -25,6 +25,7 @@ public class Djkstras {
             dist[i] = Integer.MAX_VALUE;
 
         // first add source vertex to PriorityQueue
+        // this is cumulative distance from srcNode to added node
         pqueue.add(new Node(srcVertex, 0));
 
         // Distance to the source from itself is 0
@@ -32,9 +33,10 @@ public class Djkstras {
         while (pqueue.size() != 0) {
             // u is removed from PriorityQueue and has min distance
             Node nextSrcNode = pqueue.poll();
+            int cumulativeDistTillNxtSrcNode = nextSrcNode.weight;
             for (int i = 0; i < adjList.get(nextSrcNode.vertex).size(); i++) {
                 Node nextDestVertex = adjList.get(nextSrcNode.vertex).get(i);
-                dist[nextDestVertex.vertex] = Math.min(dist[nextDestVertex.vertex], nextSrcNode.weight+nextDestVertex.weight);
+                dist[nextDestVertex.vertex] = Math.min(dist[nextDestVertex.vertex], cumulativeDistTillNxtSrcNode+nextDestVertex.weight);
                 pqueue.add(new Node(nextDestVertex.vertex, dist[nextDestVertex.vertex]));
             }
         }

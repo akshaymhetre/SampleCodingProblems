@@ -1,5 +1,6 @@
 package com.akshay.learning.DP.iterative;
 
+import com.akshay.learning.DP.recursive.LongestPathMatrix;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,4 +1,4 @@
-package com.akshay.learning.DP.iterative;
+package com.akshay.learning.DP.recursive;
 
 /*
 * Given an m x n integers matrix, return the length of the longest increasing path in matrix.

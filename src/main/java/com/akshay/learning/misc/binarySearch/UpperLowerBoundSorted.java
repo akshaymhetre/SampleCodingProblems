@@ -1,6 +1,7 @@
 package com.akshay.learning.misc.binarySearch;
 
 public class UpperLowerBoundSorted {
+    // 2,6,9,10,14 <--- find upper bound for 7 -> ans = 2, before 9
     public int getUpperBoundIndex(int[] nums, int x){
         int low = 0, high = nums.length-1;
         while(low <= high){
