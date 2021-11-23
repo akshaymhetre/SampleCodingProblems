@@ -25,6 +25,10 @@ Example 3:
 Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
 Output: false
 *
+* BFS:
+* - Start from index 0 and search if prefix is there in dictionary
+* - if prefix found push end (next index of prefix) to queue so that we can later start search from there
+* -
 * leet code
 * */
 public class WordBreak {

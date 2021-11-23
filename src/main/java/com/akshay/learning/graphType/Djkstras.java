@@ -1,4 +1,4 @@
-package com.akshay.learning.graph;
+package com.akshay.learning.graphType;
 
 import java.util.*;
 public class Djkstras {

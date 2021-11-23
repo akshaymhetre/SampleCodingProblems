@@ -1,4 +1,4 @@
-package com.akshay.learning.graph.adjUnwaited;
+package com.akshay.learning.graphType.alien;
 
 import java.util.Objects;
 

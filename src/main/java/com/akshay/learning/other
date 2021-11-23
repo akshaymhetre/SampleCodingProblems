@@ -1,1 +1,64 @@
 1. NEXt permutation of number: https://www.youtube.com/watch?v=LuLCLgMElus&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=13
+2. 3 sum, find all a,b,c distinct triplets from array where a+b+c = 0 https://www.youtube.com/watch?v=onLoX6Nhvmg
+    - brute n3
+    - use hashmap with freq cnt, and find c where c = -(a+b)- Time Complexity - (n^2logn) Space-
+    - sort array
+        - As b+c = -a
+        - Keep i pointer on first element, treat that as 'a'
+        - Keep low on i+1 and high at end and do binary search to find sum of two elements
+        - later move i pointer to next element which is not equal to previous
+        -  a  low                           high
+        - -2, -2, -1, -1, -1, 0, 0, 0, 2, 2, 2
+        - (b+c = -a) => (b+c=2) => search b and c with sum 2
+        - move 'a' pointer directly to -1 element, do not process again for -2
+3. Subarray sum equals K
+    - brute - n3
+    - Collect Prefix-sum find pair(i, j) such that => prefixSum(i, j) = k =  prefixSum(0, j) -  prefixSum(0, i-1)
+      so check if any prefixSum exists for (currSum-k) => (0, j) - k
+      to check you can use Set to find number easily
+4.  Subarray sum NO greater than K
+    - same as above but use TreeSet to find ceiling/flooring
+5. Rotate linked list by K
+    - take modulo and removed large K number K= K%lengthOfLinkedList
+    - Link last node to first node
+    - Try to reach to Kth node and try to point head to kth node and remove prev.next = null
+6. Clone a linked list with next and random pointer - https://www.youtube.com/watch?v=VNf6VynfpdM
+    - Solution 1:
+        - Keep Map<Node, Node>, create nodes without pointres and add map.put(orignialNode, copyNode)
+        - then easily try to create links by original link list
+    - Solution 2:
+        - Create clone node and attach after each source node alternatively
+        - copy random pointers by observing random pointer from src list
+        - create next pointers
+        - for example below, dash numbers are clone nodes
+        - 1 -> 2 -> 3 -> 4
+          |_________^
+        - 1 ->    -> 2 ->   -> 3 ->    -> 4 ->
+                1'        2'        3'         4'
+        - Random pointer going from 1 to 3, copy from 1's next 1' to 3's next that is 3'
+        - Then create next pointers by using 2 or 3 pointers
+7. flatten linked list: https://www.youtube.com/watch?v=ysytSSXpAI0&list=RDCMUCJskGeByzRRSvmOyZOz61ig&index=2
+    - List having next and bottom pointer ins sorted order
+    - create single linked list with all bottom pointer in sorted order
+    - merged two link list one by one using two pointer method, point to lowest of them and move down
+    - do it recursively for all node bottoms
+8. Add two numbers linked list
+9. Open locks - https://www.youtube.com/watch?v=vtxETRvR9JY
+10. Max sum of rectangle in a matrix - https://www.youtube.com/watch?v=yCQN096CwWM
+    - Iterate column
+        i = 1 -> n
+            j = i -> n
+    - Keep array of sum of size m, length of rows, sum[m]
+    - Apply Kaden's algo to get sum at each iteration, keep max sum to keep at globally
+11. Max sum of rectangle No Larger Than K
+    - Do same as above
+    - Use prefix sum technique, and use treeSet to get less than K using ceiling technique
+12. Min. Rectangle from cordinates - https://leetcode.com/problems/minimum-area-rectangle/discuss/900264/IntuitiveWith-PicturesC%2B%2BJavaExplanation
+    - Input: points = [[1,1],[1,3],[3,1],[3,3],[4,1],[4,3]]
+      Output: 2
+    - Keep HashMap of X-cord -> listOf(Y-cord), for example, x1 -> [y3, y1, y5]
+    - Find any two points A(x1, y1) & B(x2, y2) which are diagonal that is x1 != x2 && y1 != y2
+    - Now check for point A (x1) if there is any entry with value y2 AND
+                for point B (x2) if there is any entry with value y1
+
+

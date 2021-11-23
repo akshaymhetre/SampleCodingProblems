@@ -1,4 +1,4 @@
-package com.akshay.learning.graph.weighted;
+package com.akshay.learning.graphType.weighted;
 
 import java.util.Objects;
 
