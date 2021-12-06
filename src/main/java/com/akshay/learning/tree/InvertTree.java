@@ -10,10 +10,8 @@ Output: [4,7,2,9,6,3,1]
 public class InvertTree {
     public TreeNode invertTree(TreeNode root) {
         if(root == null) return null;
-        TreeNode newLeft = invertTree(root.right);
-        TreeNode newRight = invertTree(root.left);
-        root.left = newLeft;
-        root.right = newRight;
+        root.left = invertTree(root.right);
+        root.right = invertTree(root.left);
         return root;
     }
 

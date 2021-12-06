@@ -18,9 +18,11 @@ public class GroupAnagram {
         for(String word : words){
             Arrays.fill(charCount, 0);
             for(char c : word.toCharArray()) charCount[c-'a']++;
+
+            //String key = Arrays.stream(charCount).mapToObj(Integer::toString).collect(Collectors.joining("#"));
             StringBuilder stringBuilder = new StringBuilder();
-            for(int i = 0 ; i < charCount.length ; i++){
-                stringBuilder.append(charCount[i]);
+            for (int j : charCount) {
+                stringBuilder.append(j);
                 stringBuilder.append("#");
             }
             String key = stringBuilder.toString();

@@ -39,9 +39,9 @@ public class SubArrWithZeroSum {
         HashSet<Integer> prefixSumSet = new HashSet<>();
         prefixSumSet.add(0); // assume zero sum is found so far
         int sum = 0;
-        for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
-            if(prefixSumSet.contains(sum)) return true;
+        for (int num : nums) {
+            sum += num;
+            if (prefixSumSet.contains(sum)) return true;
             prefixSumSet.add(sum);
         }
         return false;

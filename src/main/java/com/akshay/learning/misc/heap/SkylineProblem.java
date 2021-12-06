@@ -63,11 +63,11 @@ public class SkylineProblem {
                 pairs) {
             int currHeight = pair.height;
             int currX = pair.x;
-            //starting point
-            if(currHeight < 0){
-                // only add positive heights
+
+            if(currHeight < 0){ //for start point
+                // as we set negative height for start point, make sure you add positive heights
                 maxHeights.add(-currHeight);
-            } else {
+            } else { //for end point
                 maxHeights.remove(currHeight);
             }
 

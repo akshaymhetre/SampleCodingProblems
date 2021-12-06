@@ -1,6 +1,7 @@
 package com.akshay.learning.tree;
 
 public class IsValidBST {
+    // validate(root, null, null)
     public boolean validate(TreeNode root, Integer low, Integer high) {
         // Empty trees are valid BSTs.
         if (root == null) {

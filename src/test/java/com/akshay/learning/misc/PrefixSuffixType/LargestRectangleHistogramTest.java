@@ -1,5 +1,6 @@
 package com.akshay.learning.misc.PrefixSuffixType;
 
+import com.akshay.learning.misc.orderingType.LargestRectangleHistogram;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

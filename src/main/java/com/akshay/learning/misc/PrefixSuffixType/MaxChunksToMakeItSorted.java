@@ -33,7 +33,7 @@ public class MaxChunksToMakeItSorted {
     For example,
 
     original: 0, 2, 1, 4, 3, 5, 7, 6
-    max:      0, 2, 2, 4, 4, 5, 7, 7
+  prefix max: 0, 2, 2, 4, 4, 5, 7, 7
   chunkCount: 1  2  2  3  3  4  5  5
 
     The chunks are: 0 | 2, 1 | 4, 3 | 5 | 7, 6

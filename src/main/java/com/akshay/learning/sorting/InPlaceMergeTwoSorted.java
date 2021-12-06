@@ -25,7 +25,7 @@ public class InPlaceMergeTwoSorted {
                 swap(X, Y, i, 0);
                 int unsortedFirstElement = Y[0];
                 // shift elements until found less than first
-                int j = 1;
+                int j ;
                 for (j = 1; j < Y.length && Y[j] < unsortedFirstElement; j++) {
                     Y[j-1] = Y[j];
                 }

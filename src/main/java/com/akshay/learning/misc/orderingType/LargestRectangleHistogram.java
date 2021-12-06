@@ -1,4 +1,4 @@
-package com.akshay.learning.misc.PrefixSuffixType;
+package com.akshay.learning.misc.orderingType;
 
 import java.util.Stack;
 
