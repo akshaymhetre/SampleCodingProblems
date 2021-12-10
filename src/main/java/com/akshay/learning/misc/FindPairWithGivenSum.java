@@ -35,10 +35,10 @@ public class FindPairWithGivenSum {
     // set = 0, 1, 5, -2,
     public int[] findPairHashMapMethod(int[] nums, int target){
         HashMap<Integer, Integer> diffMap = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            int diff = Math.abs(target-nums[i]);
-            if(diffMap.containsKey(diff)) return new int[]{diffMap.get(diff), nums[i]};
-            else diffMap.put(diff, nums[i]);
+        for (int num : nums) {
+            int diff = Math.abs(target - num);
+            if (diffMap.containsKey(diff)) return new int[]{diffMap.get(diff), num};
+            else diffMap.put(num, diff);
         }
         return new int[]{-1, -1};
     }
