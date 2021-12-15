@@ -43,9 +43,10 @@ public class DistributeCandy {
 
         // ** Step 1: Forward **
         for (int i=0; i<A.length-1; i++) {
-            int curr = A[i];
-            int next = A[i + 1];
-            if (curr < next) {
+            int currPersonRating = A[i];
+            int nextPersonRating = A[i + 1];
+            if (currPersonRating < nextPersonRating) {
+                // give one more candy to next person than current one
                 candies[i + 1] = candies[i] + 1;
             }
         }

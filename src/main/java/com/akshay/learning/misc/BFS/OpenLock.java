@@ -25,7 +25,7 @@ public class OpenLock {
             for (int i = 0; i < x; i++) {
                 final String poll = queue.poll();
                 if(visited.contains(poll)) continue;
-                if(poll.equals(target)) return attempts;
+                if(Objects.equals(poll, target)) return attempts;
                 final Set<String> allCombinations = getAllCombinations(poll);
                 visited.add(poll);
                 queue.addAll(allCombinations);

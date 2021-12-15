@@ -31,7 +31,7 @@ public class QuickSort {
             }
         }
         // at the end swap pivot with element next to last smallest i.e, i+1
-        swap(arr, i+1, pivot);
+        swap(arr, i+1, high);
         return i+1; // return the new pivot position
     }
 

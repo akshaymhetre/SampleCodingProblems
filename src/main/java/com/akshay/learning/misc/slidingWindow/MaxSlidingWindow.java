@@ -43,6 +43,9 @@ public class MaxSlidingWindow {
     *   - Once window goes out of sight for first element remove that element as its not needed
     * */
     public int[] maxSlidingWindow(int[] nums, int k) {
+        if (nums == null || k <= 0) {
+            return new int[0];
+        }
         int n = nums.length;
         int[] r = new int[n-k+1];
         int ri = 0;
@@ -50,14 +53,14 @@ public class MaxSlidingWindow {
         Deque<Integer> deque = new ArrayDeque<>();
         for (int i = 0; i < nums.length; i++) {
             // remove numbers out of range k
-            if (!deque.isEmpty() && deque.peek() == i - k) {
+            if (!deque.isEmpty() && deque.peek() < i - k + 1) {
                 deque.poll();
             }
             // remove smaller numbers in k range as they are useless
             while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
                 deque.pollLast();
             }
-
+            // adding index
             deque.offer(i);
             if (i >= k - 1 && !deque.isEmpty()) {
                 r[ri++] = nums[deque.peek()];

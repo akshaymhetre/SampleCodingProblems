@@ -7,8 +7,8 @@ public class HeapSort {
 
         // Build heap (rearrange array)
         for (int i = n / 2 - 1; i >= 0; i--)
-            heapify(A, n, i);   // To heapify a subtree rooted with node i which is
-        // Heapify:- A process which helps regaining heap properties
+            heapify(A, n, i);   // To heapify a subtree rooted with node i which is an index in arr[]
+        // Heapify:- A process which helps to regain heap properties
 
 
         // One by one extract an element from heap

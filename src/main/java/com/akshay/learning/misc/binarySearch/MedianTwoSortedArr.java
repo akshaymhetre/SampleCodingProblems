@@ -33,10 +33,11 @@ public class MedianTwoSortedArr {
         That's why below start is 0 and end is m.
         * */
         int start = 0, end = m;
-        int total = m+n;
+        int totalNums = m+n;
+        int totalCuts = totalNums + 1;
         while (start <= end){ // Notice end is equal to length here, as partition can be possible at that part
             int cut1 = (start+end) >> 1; // same as (start+end)/2
-            int cut2 = ((total+1)/2)-cut1; //half of total - first cut, this (total+1)/2 handles odd and even case as well
+            int cut2 = (totalCuts/2)-cut1; //half of totalCuts - first cut
             int maxLeft1 = (cut1 == 0) ? Integer.MIN_VALUE: arr1[cut1-1]; // number before partition
             int maxLeft2 = (cut2 == 0) ? Integer.MIN_VALUE: arr2[cut2-1];
 

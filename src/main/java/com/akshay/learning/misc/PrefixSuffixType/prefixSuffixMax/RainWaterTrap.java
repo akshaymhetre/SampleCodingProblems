@@ -53,7 +53,7 @@ public class RainWaterTrap {
     /*
     * Solution : T(n) and S(2n)
     * Logic : Find prefix max and suffix max
-    * At each index find min from prefixMax and suffixMax that much amount of water can be save at that index
+    * At each index find min from prefixMax and suffixMax minus current height that much amount of water can be save at that index
     * */
     public int trap1(int[] height) {
         int[] prefixMax = getPrefixMax(height);

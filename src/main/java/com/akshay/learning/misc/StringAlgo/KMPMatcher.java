@@ -38,7 +38,7 @@ public class KMPMatcher {
      */
     private int[] computeTemporaryArray(char pattern[]){
         int [] lps = new int[pattern.length];
-        // lps[i] represents max length prefix found till i with same suffix
+        // lps[i] represents max length suffix found till i with same prefix
         // Two pointers
         int index =0;
         int i=1;
