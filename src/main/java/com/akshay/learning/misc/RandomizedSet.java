@@ -38,8 +38,8 @@ public class RandomizedSet {
     java.util.Random rand = new java.util.Random();
     /** Initialize your data structure here. */
     public RandomizedSet() {
-        nums = new ArrayList<Integer>();
-        locs = new HashMap<Integer, Integer>();
+        nums = new ArrayList<>();
+        locs = new HashMap<>();
     }
 
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
