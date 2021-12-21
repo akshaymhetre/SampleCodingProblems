@@ -11,7 +11,7 @@ package com.akshay.learning.DP.recursive;
   price    | 1   5   8   9  10  17  17  20
   *
   * Logic:
-  * maxProfitTillLen(n) = MAX(profitOfLen(n) + maxProfitTillLen(n-i-1)) for every 0 < i < n
+  * maxProfitTillLen(n) = MAX(profitOfLen(i) + maxProfitTillLen(n-i-1)) for every 0 < i < n
 * */
 public class CuttingRod {
 

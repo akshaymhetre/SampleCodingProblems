@@ -16,10 +16,12 @@ public class ReorderList {
     public int[] reorderList(ListNode head) {
         // as per problem statment list will always have one value
         if(head.next == null) return null;
-        final ListNode middle1 = getMiddle(head);
-        ListNode middle = reverse(middle1);
+        ListNode middle = getMiddle(head);
+        // reverse list from middle
+        middle = reverse(middle);
         ListNode start = head;
         ListNode middleNext;
+        // merge two lists : one with head and other with middle
         while (middle.next != null) {
             middleNext = middle.next;
             middle.next = start.next;

@@ -1,6 +1,7 @@
-package com.akshay.learning.DP.recursive;
+package com.akshay.learning.misc.BFS;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /*
 * Given a string s and a dictionary of strings wordDict,

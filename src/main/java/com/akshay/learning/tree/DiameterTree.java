@@ -3,20 +3,20 @@ package com.akshay.learning.tree;
 public class DiameterTree {
     int max;
     public int diameter(TreeNode treeNode) {
-        return _diameter(treeNode, 0);
+        return _diameter(treeNode);
     }
 
-    private int _diameter(TreeNode treeNode, int ht) {
-        if(treeNode == null) return ht;
-        final int leftHt = _diameter(treeNode.left, ht + 1);
-        final int rightHt = _diameter(treeNode.right, ht + 1);
-        final int diameter = 1 + leftHt + rightHt;
+    private int _diameter(TreeNode treeNode) {
+        if(treeNode == null) return 0;
+        final int leftHt = _diameter(treeNode.left);
+        final int rightHt = _diameter(treeNode.right);
+        final int diameter = leftHt + rightHt;
         max = Math.max(max, diameter);
-        return Math.max(leftHt, rightHt);
+        return 1 + Math.max(leftHt, rightHt);
     }
 
 
-    // By Take u fiorward
+    // By Take u forward
     public int diameterOfBinaryTree(TreeNode root) {
         int[] diameter = new int[1];
         height(root, diameter);

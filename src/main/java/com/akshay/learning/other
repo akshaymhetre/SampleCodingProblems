@@ -1,7 +1,7 @@
 1. NEXt permutation of number: https://www.youtube.com/watch?v=LuLCLgMElus&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=13
 2. 3 sum, find all a,b,c distinct triplets from array where a+b+c = 0 https://www.youtube.com/watch?v=onLoX6Nhvmg
     - brute n3
-    - use hashmap with freq cnt, and find c where c = -(a+b)- Time Complexity - (n^2logn) Space-
+    - use hashmap with freq cnt, and find c where c = -(a+b), Time Complexity - (n^2logn) Space-
     - sort array
         - As b+c = -a
         - Keep i pointer on first element, treat that as 'a'
@@ -13,8 +13,12 @@
         - move 'a' pointer directly to -1 element, do not process again for -2
 3. Subarray sum equals K
     - brute - n3
-    - Collect Prefix-sum find pair(i, j) such that => prefixSum(i, j) = k =  prefixSum(0, j) -  prefixSum(0, i-1)
-      so check if any prefixSum exists for (currSum-k) => (0, j) - k
+    - Collect Prefix-sum find pair(i, j)
+    - there will bbe two conditions:
+        - with pair(0, j) == k, that is prefix sum == k for subarray starting from 0 which is easy to find
+        - with pair(i, j) == k, where i != 0, in such case, prefixSum(i, j) = k = prefixSum(0, j) -  prefixSum(0, i-1)
+            that is, prefixSum(0, i-1) = (0, j) - k where i <= j
+            that means for current sum - k you can cehck if you have calculated the result before
       to check you can use Set to find number easily
 4.  Subarray sum NO greater than K
     - same as above but use TreeSet to find ceiling/flooring
@@ -68,6 +72,11 @@
 
     Solution - Use binary search
 14. Count all smaller elements to the left of each element - Google
+15. ZigZag tree level order
+    - Use Deque
+    - Keep flag to toggle direction at each level
+    - Use pollFirst and pollLast
+
 
 
 

@@ -33,6 +33,9 @@ public class FindNeighbours {
             for (TreeNode node: nodes) {
                 if(node.left != null && !visited.contains(node)) queue.add(node.left);
                 if(node.right != null && !visited.contains(node)) queue.add(node.right);
+                // add parent as well
+                final TreeNode parentNode = childToParentMapping.get(node);
+                if(parentNode != null && !visited.contains(parentNode)) queue.add(parentNode);
             }
             dist++;
         }

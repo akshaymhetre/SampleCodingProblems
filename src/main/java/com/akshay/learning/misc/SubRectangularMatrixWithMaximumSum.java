@@ -54,7 +54,7 @@ public class SubRectangularMatrixWithMaximumSum {
         }
     }
 
-    private KadaneResult kadane(int arr[]){
+    /*private KadaneResult kadane(int arr[]){
         int max = 0;
         int maxStart = -1;
         int maxEnd = -1;
@@ -73,6 +73,28 @@ public class SubRectangularMatrixWithMaximumSum {
             }
         }
         return new KadaneResult(max, maxStart, maxEnd);
+    }*/
+
+    public KadaneResult kadane(int[] arr){
+        int max = arr[0] ;
+        int maxSumSoFar = arr[0];
+
+        int maxStart = -1;
+        int maxEnd = -1;
+        int currentStart = 0;
+        for(int i = 1; i < arr.length; i++){
+            maxSumSoFar = Math.max(maxSumSoFar+arr[i], arr[i]);
+            // IF maxSumSoFar resets to given element as (maxSumSoFar+arr[i]) is negative, THEN
+            if(maxSumSoFar == arr[i]) currentStart = i;
+            max = Math.max(max, maxSumSoFar);
+            // IF max changes
+            if(max == maxSumSoFar) {
+                maxStart = currentStart;
+                maxEnd = i;
+            }
+        }
+        return new KadaneResult(max, maxStart, maxEnd);
+
     }
 
 
